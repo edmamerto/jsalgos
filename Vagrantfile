@@ -65,11 +65,16 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt-get install -y nodejs
     sudo npm install npm --global
     sudo npm install -g jest
     cd /jsalgos
     npm install
+    # Added zsh shell.
+    sudo apt-get install -y zsh
+    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh 
+    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    source ~/.zshrc
   SHELL
 end
