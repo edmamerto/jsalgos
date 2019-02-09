@@ -3,7 +3,7 @@
 
 ##  Bring up a virtual environment
 I personally like isolating my codebases from my host environment. 
-This should install dependencies like `node` and `npm`
+Provision includes `node`, `npm` and `jest`
 ```sh
 $ vagrant up
 $ vagrant ssh
