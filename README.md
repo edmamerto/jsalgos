@@ -3,9 +3,11 @@
 
 ##  Bring up a virtual environment
 I personally like isolating my codebases from my host environment. 
-this should install dependencies like `node` and `npm`
+This should install dependencies like `node` and `npm`
 ```sh
 $ vagrant up
+$ vagrant ssh
+$ cd /jsalgos
 ```
 ## Test a specific file
 ```sh
