@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./", "/jsalgo"
+  config.vm.synced_folder ".", "/jsalgos"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -65,14 +65,11 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    sudo apt update
-    sudo apt-get install nodejs-legacy
-    sudo apt install npm
-    sudo npm cache clean -f
-    sudo npm install -g n
-    sudo n stable
-    cd /jsalgo
-    npm install
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo npm install npm --global
     sudo npm install -g jest
+    cd /jsalgos
+    npm install
   SHELL
 end
