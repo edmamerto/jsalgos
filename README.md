@@ -1,5 +1,5 @@
 # jsalgo
-> Collection of algorithms in javascript for interviews
+> Algorithms in javascript for interviews
 
 ##  Bring up a virtual environment
 I personally like isolating my codebases from my host environment. 
