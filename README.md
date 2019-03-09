@@ -46,3 +46,5 @@ Enter `repl` mode to print out variables
 ```
 $ repl
 ```
+## Todo
+Travis build
